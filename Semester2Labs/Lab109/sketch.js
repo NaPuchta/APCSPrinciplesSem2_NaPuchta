@@ -1,35 +1,38 @@
-/*
-** Ball 2 Constructor function
-** Naomi Puchta
-** Aug 27, 2018
-*/
+// Selection Sorting
 
-// Global variables
-var balls = [];
+// adding the for function here
 
-// put setup code here
-function setup(){
-	var cnv = createCanvas(800, 800);
-	cnv.position((windowWidth-width)/2, 30);
-	background(20,20,20);
-	LoadBalls(5);
-// method call ^^
+numbers = [4,5,2,6,1,7,8,9];
+
+// so what will happen is that the list will be traveresed and the lowest number
+// will be brought to the front
+
+// must find a way to put this somewhere
+if(numbers[i] < numbers[i+1]){
+	tempor = numbers[i]
 }
-
-function draw() {
-	for(var i = 0; i < balls.length; i = i + 1){
-		balls[i].run();
-	}
-}
-
-function LoadBalls(numballs){
-	for(var i = 0; i < numballs; i = i + 1){
-		var locX = random(width);
-		var locY = random(height);
-		var rad = 20;
-		var col = (random(0,255),random(0,255),random(0,255));
-		var ball = new Ball(locX, locY, rad, col);
-		balls.push(ball);
+for(var i = 0; i < j; i++){
+	for(var j = numbers.length - 1; j >= 0; j--){
+		// adding the if function here to search for the lowest value
+		if(tempor > numbers[i]){
+			tempor = numbers[i]
+			// confused overall but must find a way to make it repeat each time
+			// the two for functions might not be the things that work in this case)
+		}
 	}
 
+}
+
+// will add more here once figured out
+
+// here will also be the selection sort
+
+// traverses the list and list length decreases from left to right
+for(var i = 0; i < numbers.length - 1; i++){
+	for(var j = numbers.length - 1; j > i; j--){
+		tempora = numbers[j]
+		if(tempora > numbers[j-1]){
+			tempora = number
+		}
+	}
 }
