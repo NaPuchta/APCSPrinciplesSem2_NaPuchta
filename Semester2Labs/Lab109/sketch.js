@@ -5,11 +5,11 @@
 // GLOBAL VARIABLES
 
 // variable for the example sort
-var numb = [4,5,2,6,1,7,8,9];
+var numb = [12,11,4,15,5,10,2,14,6,1,7,8,9,13];
 // variable for select sort
-var numbers = [4,5,2,6,1,7,8,9];
+var numbers = [12,11,4,15,5,10,2,14,6,1,7,8,9,13];
 // variable for insert sort
-var numbrs = [4,5,2,6,1,7,8,9];
+var numbrs = [12,11,4,15,5,10,2,14,6,1,7,8,9,13];
 
 function setup(){
 	selectSort()
