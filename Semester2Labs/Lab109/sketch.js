@@ -10,6 +10,8 @@
 var numbers = [];
 // variable for insert sort
 var numbrs = [];
+// variables for bubble sort
+var num = [];
 // for the random numbers in the same array
 var randomNumber;
 
@@ -17,6 +19,7 @@ function setup(){
 	loadingNumbers()
 	selectSort()
 	insertSort()
+	bubbleSort()
 }
 // so what will happen is that the list will be traveresed and the lowest number
 // will be brought to the front
@@ -46,11 +49,40 @@ function loadingNumbers(){
 		randomNumber = (round(random(20000)))
 		numbers.push(randomNumber)
 		numbrs.push(randomNumber)
+		num.push(randomNumber)
 	}
 }
 
 
+// --- Actual Bubble Sorting ---
 
+var holding;
+var milliBubble;
+var bubbleEnd;
+var bubbleStart;
+var bubbleCompare = 0;
+var bubbleSwap = 0;
+
+function bubbleSort(){
+	bubbleStart = millis()
+	for(var i = num.length - 1; i >= 1; i--){
+		for(var j = 0; j < num.length; j++){
+			bubbleCompare = bubbleCompare + 1
+			if(num[j] > num[j+1]){
+				bubbleSwap = bubbleSwap + 1
+				holding = num[j+1];
+				num[j+1] = num[j];
+				num[j] = holding;
+			}
+		}
+	}
+	bubbleEnd = millis()
+	milliBubble = bubbleEnd - bubbleStart
+	console.log(num)
+	console.log('The Bubble list was compared ' + bubbleCompare + ' times.')
+	console.log('The Bubble list was also swapped ' + bubbleSwap + ' times.')
+	console.log('Finally the Bubble list took a total of ' + milliBubble + ' milliseconds.')
+}
 
 // --- Actual Selection Sorting ---
 
