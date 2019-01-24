@@ -1,0 +1,36 @@
+{
+  "countrydata":[
+    {
+      "females": 234287,
+      "country": "Afghanistan",
+      "age": 18,
+      "males": 253807,
+      "year": 2004,
+      "total": 488092
+    },
+    {
+      "females": 9491914,
+      "country": "AFRICA",
+      "age": 18,
+      "males": 9626947,
+      "year": 2004,
+      "total": 19118867
+    },
+    {
+      "females": 30762,
+      "country": "Albania",
+      "age": 18,
+      "males": 30186,
+      "year": 2004,
+      "total": 60949
+    },
+    {
+      "females": 382160,
+      "country": "Algeria",
+      "age": 18,
+      "males": 397475,
+      "year": 2004,
+      "total": 779634
+    }
+  ]
+}

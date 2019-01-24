@@ -4,7 +4,10 @@
 
 // -- GLOBAL VARIABLES --
 var data;
+var data2;
+var data3;
 
+var done = false;
 // -- This is the SETUP function --
 function setup(){
 	// creating the canvas
@@ -23,6 +26,10 @@ function loadingData(incomingData){
 	data2 = incomingData;
 	// selectionsort data
 	data3 = incomingData;
+	done = true;
+	if(done){
+		bubbleSort()
+	}
 }
 
 // -- Bubble Sorting --
@@ -30,17 +37,36 @@ function loadingData(incomingData){
 var holder;
 
 function bubbleSort(){
+	// adding the for loop
 	for(var i = data.countrydata.length - 1; i >= 1; i--){
-		for(var j = 0; j < data.countrydata.length; j++){
+		for(var j = 0; j < data.countrydata.length - 1; j++){
 			if(data.countrydata[j].females > data.countrydata[j+1].females){
+				// -- Swapping --
 				holder = data.countrydata[j+1]
 				data.countrydata[j+1] = data.countrydata[j]
 				data.countrydata[j] = holder
+				// -- Swapping --
 			}
 		}
 	}
+	// statement here
 	console.log('this is the country with the least # of females: ')
 	console.log(data.countrydata[0].country)
 	console.log('this is the country with the most # of females: ')
 	console.log(data.countrydata[data.countrydata.length - 1].country)
+}
+
+// -- Insert Sorting --
+
+var holder2;
+
+function insertSort(){
+
+}
+// -- Selection Sorting --
+
+var holder3;
+
+function selectionSort(){
+
 }
