@@ -7,6 +7,10 @@ var data;
 var data2;
 var data3;
 
+var bubbleTime = false;
+var insertTime = false;
+var selectionTime = false;
+
 var done = false;
 var startScreen = false;
 // -- This is the SETUP function --
@@ -52,12 +56,40 @@ function draw(){
 		rect(100,110,10,10,34)
 		// if the mouse is within the hit box of each sorting routine
 	}
+	if(bubbleTime){
+		console.log('BubbleTime')
+	}
+	if(insertTime){
+		console.log('InsertTime')
+	}
+	if(selectionTime){
+		console.log('SeletionTime')
+	}
 }
 // -- Mouse Click Function --
 function mouseClicked(){
-	// put in the mouse x and mouse y 
-	if()
-
+	// put in the mouse x and mouse y
+	// BUBBLE
+	if(mouseX > 100 & mouseX < 110){
+		if(mouseY > 50 & mouseY <60){
+			// when the little square is pressed
+			// the bubble sort function will be used
+		console.log('Bubble')
+		startScreen = false;
+		bubbleTime = true;
+		}
+		// SELECT
+		if(mouseY > 80 & mouseY < 90){
+			console.log('Select')
+			startScreen = false;
+			selectTime = true;
+		}
+		if(mouseY > 110 & mouseY < 120){
+			console.log('Insert')
+			startScreen = false;
+			insertTime = true;
+		}
+	}
 }
 
 // -- Bubble Sorting --
