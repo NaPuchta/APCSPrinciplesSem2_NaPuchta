@@ -11,8 +11,17 @@ var bubbleTime = false;
 var insertTime = false;
 var selectionTime = false;
 
+var bubbleGraph = false;
+var insertGraph = false;
+var selectionGraph = false;
+
 var done = false;
 var startScreen = false;
+
+var xPosition;
+var yPosition;
+var femaleLength;
+
 // -- This is the SETUP function --
 function setup(){
 	// creating the canvas
@@ -34,9 +43,6 @@ function loadingData(incomingData){
 	done = true;
 	if(done){
 		startScreen = true;
-		bubbleSort()
-		insertSort()
-		selectionSort()
 	}
 }
 
@@ -57,13 +63,30 @@ function draw(){
 		// if the mouse is within the hit box of each sorting routine
 	}
 	if(bubbleTime){
-		console.log('BubbleTime')
+		bubbleSort();
+		bubbleTime = false;
+		bubbleGraph = true;
 	}
 	if(insertTime){
-		console.log('InsertTime')
+		insertSort();
+		insertTime = false;
 	}
 	if(selectionTime){
-		console.log('SeletionTime')
+	selectionSort();
+	selectionTime = false;
+	}
+	if(bubbleGraph){
+		xPosition = 320
+		yPosition = 2
+		for(var i = 0; i < data.countrydata.length; i++){
+			femaleLength = data.countrydata[i].females
+			femaleLength2 = femaleLength / 100
+			textSize(10)
+			s = fill(50)
+			text(s,femaleLength + 'Females', xPosition, femaleLength + 10);
+			rect(xPosition, yPosition, femaleLength2, 4);
+			yPosition = yPosition + 4;
+		}
 	}
 }
 // -- Mouse Click Function --
