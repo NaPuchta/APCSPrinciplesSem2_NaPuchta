@@ -17,6 +17,7 @@ var selectionGraph = false;
 
 var done = false;
 var startScreen = false;
+var change = false;
 
 var xPosition;
 var yPosition;
@@ -42,6 +43,9 @@ function loadingData(incomingData){
 	data3 = incomingData;
 	done = true;
 	if(done){
+		if(change){
+			bubbleGraph = true;
+		}
 		startScreen = true;
 	}
 }
@@ -76,16 +80,23 @@ function draw(){
 	selectionTime = false;
 	}
 	if(bubbleGraph){
-		xPosition = 320
+		xPosition = 5
 		yPosition = 2
+		fill(0)
+		name = data.countrydata[0].country
+		textStyle(NORMAL)
+		text('The country with the most number of females is: ' + data.countrydata[data.countrydata.length-1].country, 400, 400)
+		textStyle(NORMAL)
+		text('Least to Greatest Females', 400, 10)
+		text('Refresh page to go back to start menu..', 400, 40)
+		text(name, xPosition + 50, yPosition + 10);
 		for(var i = 0; i < data.countrydata.length; i++){
 			femaleLength = data.countrydata[i].females
 			femaleLength2 = femaleLength / 100
-			textSize(10)
-			s = fill(50)
-			text(s,femaleLength + 'Females', xPosition, femaleLength + 10);
-			rect(xPosition, yPosition, femaleLength2, 4);
-			yPosition = yPosition + 4;
+			fill(255, 204, 0)
+			rect(xPosition, yPosition, femaleLength2, 3);
+			fill(255)
+			yPosition = yPosition + 3;
 		}
 	}
 }
@@ -98,8 +109,10 @@ function mouseClicked(){
 			// when the little square is pressed
 			// the bubble sort function will be used
 		console.log('Bubble')
+		clear();
 		startScreen = false;
 		bubbleTime = true;
+		change = true;
 		}
 		// SELECT
 		if(mouseY > 80 & mouseY < 90){
