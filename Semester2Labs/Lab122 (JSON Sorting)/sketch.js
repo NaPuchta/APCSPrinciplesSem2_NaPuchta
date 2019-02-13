@@ -30,7 +30,7 @@ var finish3 = false;
 // -- This is the SETUP function --
 function setup(){
 	// creating the canvas
-	var cnv = createCanvas(800,800)
+	var cnv = createCanvas(1200,1200)
 	cnv.position((windowWidth-width)/2,30)
 	background(0)
 	// this loads in the data
@@ -113,6 +113,7 @@ function draw(){
 		fill(0)
 		name = data2.countrydata[0].country
 		textStyle(NORMAL)
+		text('The country with the most number of males is:' + data.countrydata[data.countrydata.length-1].country,400,400)
 		text('Least to Greatest Males', 400, 10);
 		text('Refresh page to go back to start menu..', 400, 40);
 		text(name, xPosition + 50, yPosition + 10);
@@ -131,8 +132,6 @@ function draw(){
 		fill(255, 204,0)
 		name = data3.countrydata[0].country
 		textStyle(NORMAL)
-		text('Least to Greatest Males', 400, 10);
-		text('Refresh page to go back to start menu..', 400, 40);
 		for(var i = 0; i < data3.countrydata.length; i++){
 			if(yPosition > 780){
 				xPosition = xPosition + 150;
@@ -145,8 +144,11 @@ function draw(){
 			yPosition = yPosition + 10;
 		}
 		fill(255, 204,0)
-		text('Alphabetized', 400, 10);
-		text('Refresh page to go back to start menu..', 400, 40);
+		text('Alphabetized', 200, 10);
+		text('Refresh page to', 50, 10);
+		text('go back to start', 50, 20);
+		text('menu..', 50, 30);
+		text('Up to down left to right', 820, 80);
 	}
 }
 // -- Mouse Click Function --
