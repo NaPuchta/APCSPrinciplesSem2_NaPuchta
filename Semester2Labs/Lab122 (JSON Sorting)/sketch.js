@@ -30,7 +30,7 @@ var finish3 = false;
 // -- This is the SETUP function --
 function setup(){
 	// creating the canvas
-	var cnv = createCanvas(1200,1200)
+	var cnv = createCanvas(1200,1450)
 	cnv.position((windowWidth-width)/2,30)
 	background(0)
 	// this loads in the data
@@ -65,92 +65,30 @@ function draw(){
 		rect(100,50,10,10,34)
 		rect(100,80,10,10,34)
 		rect(100,110,10,10,34)
-		// if the mouse is within the hit box of each sorting routine
+		// Once the mouse has selected it will transfer here vv
 	}
 	if(bubbleTime){
 		bubbleSort();
 		bubbleTime = false;
 		if(finish){
-			bubbleGraph = true;
+			bubble();
 		}
 	}
 	if(insertTime){
 		insertSort();
 		insertTime = false;
 		if(finish2){
-			insertGraph = true;
+			insert();
 		}
 	}
 	if(selectionTime){
 		console.log('true')
 		selectionSort();
 		selectionTime = false;
-		selectionGraph = true;
-	}
-	if(bubbleGraph){
-		xPosition = 5;
-		yPosition = 2;
-		fill(0)
-		name = data.countrydata[0].country
-		textStyle(NORMAL)
-		text('The country with the most number of females is: ' + data.countrydata[data.countrydata.length-1].country, 400, 400)
-		textStyle(NORMAL)
-		text('Least to Greatest Females', 400, 10)
-		text('Refresh page to go back to start menu..', 400, 40)
-		text(name, xPosition + 50, yPosition + 10);
-		for(var i = 0; i < data.countrydata.length; i++){
-			femaleLength = data.countrydata[i].females
-			femaleLength2 = femaleLength / 100
-			fill(255, 204, 0)
-			rect(xPosition, yPosition, femaleLength2, 3);
-			fill(255)
-			yPosition = yPosition + 3;
-		}
-	}
-	if(insertGraph){
-		xPosition = 5;
-		yPosition = 2;
-		fill(0)
-		name = data2.countrydata[0].country
-		textStyle(NORMAL)
-		text('The country with the most number of males is:' + data.countrydata[data.countrydata.length-1].country,400,400)
-		text('Least to Greatest Males', 400, 10);
-		text('Refresh page to go back to start menu..', 400, 40);
-		text(name, xPosition + 50, yPosition + 10);
-		for(var i = 0; i < data2.countrydata.length; i++){
-			maleLength = data2.countrydata[i].males
-			maleLength2 = maleLength / 100
-			fill(255, 204,0)
-			rect(xPosition, yPosition, maleLength2, 3);
-			fill(255)
-			yPosition = yPosition + 3;
-		}
-	}
-	if(selectionGraph){
-		xPosition = 0;
-		yPosition = 10;
-		fill(255, 204,0)
-		name = data3.countrydata[0].country
-		textStyle(NORMAL)
-		for(var i = 0; i < data3.countrydata.length; i++){
-			if(yPosition > 780){
-				xPosition = xPosition + 150;
-				yPosition = 10;
-			}
-			countryName = data3.countrydata[i].country
-			fill(0)
-			textStyle(NORMAL)
-			text(countryName, xPosition, yPosition)
-			yPosition = yPosition + 10;
-		}
-		fill(255, 204,0)
-		text('Alphabetized', 200, 10);
-		text('Refresh page to', 50, 10);
-		text('go back to start', 50, 20);
-		text('menu..', 50, 30);
-		text('Up to down left to right', 820, 80);
+		selecting();
 	}
 }
+
 // -- Mouse Click Function --
 function mouseClicked(){
 	// put in the mouse x and mouse y
@@ -160,7 +98,9 @@ function mouseClicked(){
 			// when the little square is pressed
 			// the bubble sort function will be used
 		console.log('Bubble')
+		// clears the background from the screen
 		clear();
+		// this changes it to another if statement
 		startScreen = false;
 		bubbleTime = true;
 		change = true;
@@ -168,18 +108,49 @@ function mouseClicked(){
 		// SELECT
 		if(mouseY > 80 & mouseY < 90){
 			console.log('Select')
+		// clears the background from the screen
 			clear();
+			// this changes it to another if statement
 			startScreen = false;
 			selectionTime = true;
 			change = true;
 		}
 		if(mouseY > 110 & mouseY < 120){
 			console.log('Insert')
+		// clears the background from the screen
 			clear();
+			// this changes it to another if statement
 			startScreen = false;
 			insertTime = true;
 			change = true;
 		}
+	}
+}
+
+
+// -- Bubble Function --
+
+function bubble(){
+	// the starting position of the bar vv
+	xPosition = 5;
+	yPosition = 2;
+	fill(0)
+	name = data.countrydata[0].country
+	// this is the text for what the sorting was vv
+	textStyle(NORMAL)
+	text('The country with the most number of females is: ' + data.countrydata[data.countrydata.length-1].country, 400, 400)
+	textStyle(NORMAL)
+	text('Least to Greatest Females', 400, 10)
+	text('Refresh page to go back to start menu..', 400, 40)
+	text(name, xPosition + 50, yPosition + 10);
+	// the creation of the bars is here vv
+	for(var i = 0; i < data.countrydata.length; i++){
+		femaleLength = data.countrydata[i].females
+		femaleLength2 = femaleLength / 1000
+		fill(255, 204, 0)
+		rect(xPosition, yPosition, femaleLength2, 3);
+		fill(255)
+		yPosition = yPosition + 3;
 	}
 }
 
@@ -208,6 +179,30 @@ function bubbleSort(){
 	console.log(data.countrydata[data.countrydata.length - 1].country)
 }
 
+// -- Insert Function --
+// where the bars are made vv
+function insert(){
+	xPosition = 5;
+	yPosition = 2;
+	fill(0)
+	name = data2.countrydata[0].country
+	// this is the text for what the sorting was vv
+	textStyle(NORMAL)
+	text('The country with the most number of males is:' + data.countrydata[data.countrydata.length-1].country,400,400)
+	text('Least to Greatest Males', 400, 10);
+	text('Refresh page to go back to start menu..', 400, 40);
+	text(name, xPosition + 50, yPosition + 10);
+	// the creation of the bars is here vv
+	for(var i = 0; i < data2.countrydata.length; i++){
+		maleLength = data2.countrydata[i].males
+		maleLength2 = maleLength / 1000
+		fill(255, 204,0)
+		rect(xPosition, yPosition, maleLength2, 3);
+		fill(255)
+		yPosition = yPosition + 3;
+	}
+}
+
 // -- Insert Sorting --
 
 var holder2;
@@ -232,6 +227,36 @@ function insertSort(){
 	console.log('this is the country with the most # of males (insert sort): ')
 	console.log(data2.countrydata[data2.countrydata.length - 1].country)
 }
+
+// -- Selection Function --
+
+function selecting(){
+	xPosition = 0;
+	yPosition = 10;
+	fill(255, 204,0)
+	name = data3.countrydata[0].country
+	// this is the text for what the sorting was vv
+	textStyle(NORMAL)
+	// the creation of the bars is here vv
+	for(var i = 0; i < data3.countrydata.length; i++){
+		if(yPosition > 780){
+			xPosition = xPosition + 150;
+			yPosition = 10;
+		}
+		countryName = data3.countrydata[i].country
+		fill(0)
+		textStyle(NORMAL)
+		text(countryName, xPosition, yPosition)
+		yPosition = yPosition + 10;
+	}
+	fill(255, 204,0)
+	text('Alphabetized', 200, 10);
+	text('Refresh page to', 50, 10);
+	text('go back to start', 50, 20);
+	text('menu..', 50, 30);
+	text('Up to down left to right', 820, 80);
+}
+
 // -- Selection Sorting --
 
 var holder3;
