@@ -146,7 +146,7 @@ function bubble(){
 	// the creation of the bars is here vv
 	for(var i = 0; i < data.countrydata.length; i++){
 		femaleLength = data.countrydata[i].females
-		femaleLength2 = femaleLength / 1000
+		femaleLength = femaleLength / 1000
 		fill(255, 204, 0)
 		rect(xPosition, yPosition, femaleLength2, 3);
 		fill(255)
@@ -284,3 +284,8 @@ function selectionSort(){
 	console.log('this is the last in alphabetical sorting (selection sort): ')
 	console.log(data3.countrydata[data3.countrydata.length - 1].country)
 }
+
+//function bars(xLocation, yLocation, barLength){
+//	fill(255, 204, 0)
+//	rect(xLocation, yLocation, barLength, 3)
+//}
