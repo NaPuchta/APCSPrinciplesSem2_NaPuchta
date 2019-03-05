@@ -11,6 +11,7 @@ function Ball(location, velocity, radius,  col){
   this.rad = radius;
   this.col = col;
   this.acc = createVector(0,.1);
+  this.angle = 0;
 
 // This function calls other functions
 this.run = function(){
@@ -25,25 +26,28 @@ this.run = function(){
 // var distance = this.loc.dist(redBall);
 
 this.update = function(){
-  if(this!==redBall){
-    // Attraction
-    var d = this.loc.dist(redBall.loc)
-    if(d < 100){
-      var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
-      steeringForce.normalize(); // changes the magnitude to 1
-      steeringForce.mult(0.05); // scales the magnitude to .5
-      this.vel.add(steeringForce);
-    }
-    // Repulsion
-    if(d < 50){
-    var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
-    steeringForce.normalize(); // changes the magnitude to 1
-    steeringForce.mult(0.05); // scales the magnitude to .5
-    this.vel.add(steeringForce);
-    }
-    this.loc.add(this.vel);
-    //this.vel.add(this.acc);
-  }
+  this.angle = this.angle + 0.05;
+  this.loc.x = redBall.loc.x + cos(this.angle)*this.rad
+  this.loc.y = redBall.loc.y + sin(this.angle)*this.rad
+  // if(this!==redBall){
+  //   // Attraction
+  //   var d = this.loc.dist(redBall.loc)
+  //   if(d < 100){
+  //     var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
+  //     steeringForce.normalize(); // changes the magnitude to 1
+  //     steeringForce.mult(0.05); // scales the magnitude to .5
+  //     this.vel.add(steeringForce);
+  //   }
+  //   // Repulsion
+  //   if(d < 50){
+  //   var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
+  //   steeringForce.normalize(); // changes the magnitude to 1
+  //   steeringForce.mult(0.05); // scales the magnitude to .5
+  //   this.vel.add(steeringForce);
+  //   }
+  //   this.loc.add(this.vel);
+  //   //this.vel.add(this.acc);
+  // }
  }
 
 this.checkEdges = function(){

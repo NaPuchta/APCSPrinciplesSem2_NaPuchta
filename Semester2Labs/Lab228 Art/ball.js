@@ -55,6 +55,20 @@ this.checkEdges = function(){
       fade2 = color(49, 152, 226);
       colorClass2 = color(49, 175, 226);
       colorClass3 = color(86, 205, 216)
+      if(keyCode == 71){
+        colorClass = color(206, 244, 66);
+        fade1  = color(241, 244, 65);
+        fade2 = color(244, 208, 65);
+        colorClass2 = color(244, 190, 65);
+        colorClass3 = color(244, 157, 65)
+      }
+      if(keyCode == 80){
+        colorClass = color(244, 65, 106);
+        fade1  = color(244, 65, 142);
+        fade2 = color(244, 65, 175);
+        colorClass2 = color(244, 65, 229);
+        colorClass3 = color(226, 65, 244)
+      }
       // lerp to find colors between the two colors
       if(this.loc.y > 750 && this.loc.y < 800){
         coloring = colorClass
