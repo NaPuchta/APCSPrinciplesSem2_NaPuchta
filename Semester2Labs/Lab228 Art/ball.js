@@ -86,8 +86,9 @@ this.checkEdges = function(){
         coloring = colorClass3
       }
       stroke(coloring)
-      line(this.loc.x, this.loc.y, balls[id+1].loc.x, balls[id+1].loc.y)
+      // line(this.loc.x, this.loc.y, balls[id+1].loc.x, balls[id+1].loc.y)
+      // line(this.loc.x, this.loc.y, 400,400)
+      rect(this.loc.x, this.loc.y, 50, 50)
     }
  }
-
 }

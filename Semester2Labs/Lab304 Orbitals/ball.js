@@ -26,9 +26,11 @@ this.run = function(){
 // var distance = this.loc.dist(redBall);
 
 this.update = function(){
-  this.angle = this.angle + 0.05;
-  this.loc.x = redBall.loc.x + cos(this.angle)*this.rad
-  this.loc.y = redBall.loc.y + sin(this.angle)*this.rad
+  if(this !== redBall){
+    this.angle = this.angle + .05;
+    this.loc.x = redBall.loc.x + cos(this.angle)*this.rad
+    this.loc.y = redBall.loc.y + sin(this.angle)*this.rad
+  }
   // if(this!==redBall){
   //   // Attraction
   //   var d = this.loc.dist(redBall.loc)
