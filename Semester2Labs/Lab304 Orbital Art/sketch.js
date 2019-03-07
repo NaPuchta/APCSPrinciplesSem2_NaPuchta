@@ -7,6 +7,7 @@
 // Global variables
 var redBall;
 var balls = [];
+var toggle = true;
 
 //put setup code here
 function setup(){
@@ -23,18 +24,20 @@ function setup(){
 }
 
 function draw(){
-	background(20, 20, 20, 22);
-	// running the red ball
-	redBall.run();
-	for(var i = 0; i < balls.length; i = i + 1){
-		// running the individual balls
-		balls[i].run();
+	if(toggle){
+		background(20, 20, 20, 22);
+		// running the red ball
+		redBall.run();
+		for(var i = 0; i < balls.length; i = i + 1){
+			// running the individual balls
+			balls[i].run();
+		}
 	}
 }
 
 function loadBalls(numballs){
 	for(var i = 0; i < numballs; i++){
-		// these are the parameters that are being taken in 
+		// these are the parameters that are being taken in
 		var loc = createVector(random(width), random(height));
 		var vel = createVector(random(-3, 3), random(-3, 3));
 		var radius = random(20, 30);
@@ -44,4 +47,8 @@ function loadBalls(numballs){
 		balls.push(new Ball(loc, vel, radius, col, distance));
 	}
 
+}
+
+function mousePressed(){
+	toggle = !toggle
 }
