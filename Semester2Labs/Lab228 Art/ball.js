@@ -49,46 +49,44 @@ this.checkEdges = function(){
     // }
     strokeWeight(1)
     if(id < balls.length - 1){
-      // setting the beginning and end colors
-      colorClass = color(49, 109, 229);
-      fade1  = color(49, 132, 226);
-      fade2 = color(49, 152, 226);
-      colorClass2 = color(49, 175, 226);
-      colorClass3 = color(86, 205, 216)
-      if(keyCode == 71){
-        colorClass = color(206, 244, 66);
-        fade1  = color(241, 244, 65);
-        fade2 = color(244, 208, 65);
-        colorClass2 = color(244, 190, 65);
-        colorClass3 = color(244, 157, 65)
+        // setting the beginning and end colors
+        colorClass = color(49, 109, 229);
+        fade1  = color(49, 132, 226);
+        fade2 = color(49, 152, 226);
+        colorClass2 = color(49, 175, 226);
+        colorClass3 = color(86, 205, 216)
+        if(keyCode == 71){
+          colorClass = color(206, 244, 66);
+          fade1  = color(241, 244, 65);
+          fade2 = color(244, 208, 65);
+          colorClass2 = color(244, 190, 65);
+          colorClass3 = color(244, 157, 65)
+        }
+        if(keyCode == 80){
+          colorClass = color(244, 65, 106);
+          fade1  = color(244, 65, 142);
+          fade2 = color(244, 65, 175);
+          colorClass2 = color(244, 65, 229);
+          colorClass3 = color(226, 65, 244)
+        }
+        // lerp to find colors between the two colors
+        if(this.loc.y > 750 && this.loc.y < 800){
+          coloring = colorClass
+        }
+        if(this.loc.y > 650 && this.loc.y < 750){
+          coloring = fade1
+        }
+        if(this.loc.y > 550 && this.loc.y < 650){
+          coloring = fade2
+        }
+        if(this.loc.y > 450 && this.loc.y < 550){
+          coloring = colorClass2
+        }
+        if(this.loc.y > 0 && this.loc.y < 450){
+          coloring = colorClass3
+        }
+        stroke(coloring)
+        rect(this.loc.x, this.loc.y, 50, 50)
       }
-      if(keyCode == 80){
-        colorClass = color(244, 65, 106);
-        fade1  = color(244, 65, 142);
-        fade2 = color(244, 65, 175);
-        colorClass2 = color(244, 65, 229);
-        colorClass3 = color(226, 65, 244)
-      }
-      // lerp to find colors between the two colors
-      if(this.loc.y > 750 && this.loc.y < 800){
-        coloring = colorClass
-      }
-      if(this.loc.y > 650 && this.loc.y < 750){
-        coloring = fade1
-      }
-      if(this.loc.y > 550 && this.loc.y < 650){
-        coloring = fade2
-      }
-      if(this.loc.y > 450 && this.loc.y < 550){
-        coloring = colorClass2
-      }
-      if(this.loc.y > 0 && this.loc.y < 450){
-        coloring = colorClass3
-      }
-      stroke(coloring)
-      // line(this.loc.x, this.loc.y, balls[id+1].loc.x, balls[id+1].loc.y)
-      // line(this.loc.x, this.loc.y, 400,400)
-      rect(this.loc.x, this.loc.y, 50, 50)
-    }
- }
-}
+   }
+  }
