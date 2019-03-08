@@ -25,7 +25,7 @@ function setup(){
 
 function draw(){
 	if(toggle){
-		background(20, 20, 20, 22);
+		background(20, 20, 20, 5);
 		// running the red ball
 		redBall.run();
 		for(var i = 0; i < balls.length; i = i + 1){
@@ -41,7 +41,7 @@ function loadBalls(numballs){
 		var loc = createVector(random(width), random(height));
 		var vel = createVector(random(-3, 3), random(-3, 3));
 		var radius = random(20, 30);
-		var col = color(random(225),random(225),random(225));
+		var col = color(175, 56, 66);
 		// this is for what the distance of the ball will bes
 		var distance = random(1,12);
 		balls.push(new Ball(loc, vel, radius, col, distance));
