@@ -34,7 +34,7 @@ function draw(){
 
 function loadBalls(numballs){
 	for(var i = 0; i < numballs; i++){
-		// these are the parameters that are being taken in 
+		// these are the parameters that are being taken in
 		var loc = createVector(random(width), random(height));
 		var vel = createVector(random(-3, 3), random(-3, 3));
 		var radius = random(20, 30);
@@ -43,5 +43,4 @@ function loadBalls(numballs){
 		var distance = random(1,12);
 		balls.push(new Ball(loc, vel, radius, col, distance));
 	}
-
 }

@@ -73,7 +73,7 @@ this.checkEdges = function(){
 
   // render() draws the ball at the new location
  this.render = function(){
-    fill(175, 56, 66);
+    fill(this.col);
     ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
  }
 
