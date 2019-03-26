@@ -27,7 +27,7 @@ function Paddle(loc, rad, col){
     // render() draws the ball at the new location
    this.render = function(){
       fill(this.col);
-      rect(this.loc.x, this.loc.y, 120, 30);
+      rect(this.loc.x, this.loc.y, paddleLength, 30);
       // rectangle dimensions for the paddle ^^
 
    }
