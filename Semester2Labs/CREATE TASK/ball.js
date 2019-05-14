@@ -1,8 +1,3 @@
-/*
-** PaddleBall Game
-** Naomi Puchta
-** Oct 10, 2018
-*/
 
 function Ball(loc, vel, radius, col){
   // Instance variables

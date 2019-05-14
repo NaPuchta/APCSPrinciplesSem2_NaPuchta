@@ -1,8 +1,3 @@
-/*
-** PaddleBall Game
-** Naomi Puchta
-** Oct 10, 2018
-*/
 
 // this is a test (trying to put score in the corner of the screen)
 //numberScore = 0;

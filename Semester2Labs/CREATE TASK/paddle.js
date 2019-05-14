@@ -1,8 +1,3 @@
-/*
-**  Boid Constructor Function
-**  Naomi Puchta
-**  Aug 21, 2018
-*/
 
 // this is the function for the paddle vv
 function Paddle(loc, rad, col){
