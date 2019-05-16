@@ -1,3 +1,16 @@
-p.h1{
-  font-family: "courier new", Times, serif;
+h1{
+  color: #ff7621;
+  font-family: "Rockwell";
+}
+
+p{
+  transform: translate(5px, -25px);
+  font-weight: bold;
+}
+
+.square {
+  transform: translate(5px, 80px);
+  height: 3px;
+  width: 100px;
+  background-color: #555;
 }
