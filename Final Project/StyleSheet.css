@@ -14,3 +14,11 @@ p{
   width: 100px;
   background-color: #555;
 }
+
+.logo{
+  transform: translate(570px, 1px);
+}
+
+input{
+  transform: translate(20px, 100px);
+}
