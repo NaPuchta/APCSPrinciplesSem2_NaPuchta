@@ -1,24 +1,38 @@
 h1{
   color: #ff7621;
   font-family: "Rockwell";
+  transform: translate( 0px, -100px)
 }
 
 p{
-  transform: translate(5px, -25px);
+  transform: translate(0px, -120px);
   font-weight: bold;
 }
 
 .square {
-  transform: translate(5px, 80px);
+  transform: translate(0px, 90px);
   height: 3px;
   width: 100px;
   background-color: #555;
 }
 
 .logo{
-  transform: translate(570px, 1px);
+  transform: translate(800px, 1px);
 }
 
 input{
   transform: translate(20px, 100px);
+}
+
+.warning{
+  transform: translate(0px, -110px);
+  font-weight: normal;
+}
+
+.line{
+  transform: translate(0px, 0px);
+  weight: 3px;
+  border-right: 6px
+  solid  #ff7621;
+  height: 900px;
 }
