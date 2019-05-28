@@ -36,3 +36,7 @@ input{
   solid  #ff7621;
   height: 900px;
 }
+
+.input{
+  transform: translate(0px, 800px);
+}
