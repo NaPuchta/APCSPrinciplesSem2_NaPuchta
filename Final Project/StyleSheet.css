@@ -37,6 +37,55 @@ input{
   height: 900px;
 }
 
-.input{
-  transform: translate(0px, 800px);
+.Textinput{
+  transform: translate(-100px, 800px);
+}
+
+#design{
+  background-color: #edebea;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-top-right-radius: 5px;
+  transform: translate(0px,-100px);
+  width: 760px;
+  height: 600px;
+  border-style: double;
+}
+
+#User2{
+  font-weight: normal;
+  transform: translate(12px,-680px);
+}
+
+#User3{
+  font-weight: normal;
+  transform: translate(12px,-675px);
+}
+
+#rect{
+  transform: translate(800px,-800px);
+  height: 600px;
+  width: 100px;
+  background-color: #ffc16b;
+}
+
+#link1{
+  transform: translate(5px,10px);
+}
+
+#link2{
+  transform: translate(5px,5px);
+}
+
+#link3{
+  transform: translate(5px,0px);
+}
+
+#link4{
+  transform: translate(5px,-5px);s
+}
+
+#describe{
+  transform: translate(5px,5px);
+  color: #260e03;
 }
