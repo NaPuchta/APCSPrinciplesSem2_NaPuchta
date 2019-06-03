@@ -17,7 +17,7 @@ p{
 }
 
 .logo{
-  transform: translate(800px, 1px);
+  transform: translate(1780px, 1px);
 }
 
 input{
@@ -38,7 +38,7 @@ input{
 }
 
 .Textinput{
-  transform: translate(-100px, 800px);
+  transform: translate(-100px, 750px);
 }
 
 #design{
@@ -47,7 +47,7 @@ input{
   padding-left: 10px;
   border-top-right-radius: 5px;
   transform: translate(0px,-100px);
-  width: 760px;
+  width: 860px;
   height: 600px;
   border-style: double;
 }
@@ -63,7 +63,7 @@ input{
 }
 
 #rect{
-  transform: translate(800px,-800px);
+  transform: translate(1780px,-800px);
   height: 600px;
   width: 100px;
   background-color: #ffc16b;
@@ -88,4 +88,18 @@ input{
 #describe{
   transform: translate(5px,5px);
   color: #260e03;
+}
+
+.button{
+  transform: translate(400px,-155px);
+  background-color: #ff7621;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
